@@ -1,0 +1,17 @@
+module.exports = {
+  ...require('mwts/.prettierrc.json'),
+  arrowParens: 'avoid',
+  bracketSpacing: true,
+  embeddedLanguageFormatting: 'auto',
+  htmlWhitespaceSensitivity: 'css',
+  insertPragma: false,
+  printWidth: 150,
+  proseWrap: 'preserve',
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  useTabs: false,
+  trailingComma: 'es5',
+  jsxSingleQuote: true,
+  endOfLine: 'lf',
+};

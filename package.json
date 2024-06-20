@@ -1,0 +1,72 @@
+{
+  "name": "huhuadminapi",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@midwayjs/axios": "^3.16.2",
+    "@midwayjs/bootstrap": "^3.16.0",
+    "@midwayjs/core": "^3.16.0",
+    "@midwayjs/decorator": "^3.16.0",
+    "@midwayjs/info": "^3.16.1",
+    "@midwayjs/koa": "^3.16.1",
+    "@midwayjs/logger": "^3.4.0",
+    "@midwayjs/oss": "^3.16.0",
+    "@midwayjs/redis": "^3.16.0",
+    "@midwayjs/swagger": "^3.16.1",
+    "@midwayjs/typeorm": "^3.16.0",
+    "@midwayjs/upload": "^3.16.1",
+    "@midwayjs/validate": "^3.16.1",
+    "bignumber.js": "^9.1.2",
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.3.1",
+    "ioredis": "^5.4.1",
+    "lodash": "^4.17.21",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.5",
+    "redlock": "^5.0.0-beta.2",
+    "snowflake-id": "^1.1.0",
+    "swagger-ui-dist": "^5.17.9",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@midwayjs/cli": "^2.1.1",
+    "@midwayjs/mock": "^3.16.0",
+    "@types/jest": "^29.2.0",
+    "@types/koa": "^2.15.0",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "18",
+    "cross-env": "^6.0.0",
+    "jest": "^29.2.2",
+    "mwts": "^1.3.0",
+    "mwtsc": "^1.10.0",
+    "ts-jest": "^29.0.3",
+    "typescript": "~4.8.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "online": "NODE_ENV=production pm2-runtime start ./bootstrap.js --name huhuadminapi",
+    "start": "NODE_ENV=production pm2 start ./bootstrap.js --name huhuadminapi",
+    "local": "cross-env NODE_ENV=local midway-bin dev --ts",
+    "dev": "cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
+    "test": "midway-bin test --ts",
+    "cov": "midway-bin cov --ts",
+    "lint": "mwts check",
+    "lint:fix": "mwts fix",
+    "ci": "npm run cov",
+    "build:local": "midway-bin build -c",
+    "build": "mwtsc --cleanOutDir"
+  },
+  "midway-bin-clean": [
+    ".vscode/.tsbuildinfo",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "fate",
+  "license": "MIT"
+}
